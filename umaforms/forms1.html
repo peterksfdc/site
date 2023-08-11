@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="https://velocity-java-1953-dev-ed.scratch.lightning.force.com/lightning/lightning.out.js"></script>
+        <script>
+            $Lightning.use(
+              "c:testApp", // name of the Lightning app
+              function () {
+                console.log("*** framework app loaded");
+                // Callback once framework and app loaded
+                $Lightning.createComponent(
+                  "c:test1", // top-level component of your app
+                  {}, // attributes to set on the component when created
+                  document.querySelector("[data-lightning-out]"), // the DOM location to insert the component
+                  function (cmp) {
+                    // callback when component is created and active on the page
+                    console.log("*** component created");
+                  },
+                );
+              },
+              "https://velocity-java-1953-dev-ed.scratch.lightning.force.com/", // Site endpoint
+            );
+        </script>
+    </head>
+    <body>
+        <h1>UMA Forms</h1>
+        <div data-lightning-out="true"></div>
+    </body>
+</html>
